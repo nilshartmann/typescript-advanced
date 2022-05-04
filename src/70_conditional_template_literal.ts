@@ -22,19 +22,20 @@ type Person = typeof person;
 //  2. Create Updater-Type with correct keys
 //  3. Create Builder-Type
 
-function mutate<O>(o: O): any {
-  // @ts-ignore
-  return "";
-}
+// function mutate<O>(o: O): any {
+//   // @ts-ignore  we don't care for implementation
+//   return "";
+// }
 
-// this should work for person:
-const newPerson = mutate(person).updateAge(123).updateFirstname("Klaus").build();
+// this should work for person object:
+// const newPerson = mutate(person)
+//   .updateAge(123)
+//   .updateFirstname("Klaus")
+//   .build();
 
-// the updates object should be readonly:
-newPerson.age = 123; // nope, readonly
-// and of course correct types
-const age: string = newPerson.age; // nope, number
-const newAge: number = newPerson.age; // fine!
+// newPerson.age = 123; // this should be ERROR (age is readonly)
+// const age: string = newPerson.age; // this should be ERROR (age is not a string)
+// const newAge: number = newPerson.age; // this should be OK, age is number
 
 // https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
 // https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
