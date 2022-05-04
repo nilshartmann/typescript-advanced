@@ -40,7 +40,13 @@ function invalidTranslation(msg: never) {
   throw new Error("Invalid Msg Object!");
 }
 
-function hurz(a: string | number) {
+// --------------------------------------------------------------
+
+// Wenn a eine number ist, soll ein Error geworfen werden
+//  (fail-Methode)
+// ansonsten toLocaleLowerCase();
+
+function convertToLowerCase(a: string | number) {
   if (typeof a === "number") {
     fail("number is deprecated!");
   }
@@ -54,4 +60,5 @@ function fail(msg: string): never {
 
 // Info (tagged union types werden auch "discriminating unions" genannt):
 // https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions
+// https://www.typescriptlang.org/docs/handbook/2/functions.html#never
 // Never Type: https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type

@@ -22,3 +22,4 @@ function betterFetch() {
 
 // idea 2: how can users of apiFetch distinguish between
 //    ErrorResponse and SuccessResponse
+//    Write fetchUser function
