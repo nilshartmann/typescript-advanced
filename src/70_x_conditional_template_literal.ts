@@ -1,5 +1,28 @@
 export default undefined;
 
+// BEISPIEL 1:
+//   Wie kann eine funktion aussehen, die einen Parameter
+//   entgegennimmt,der nur aus erlaubten Text/Sprach-Keys besteht?
+//   (z.B. welcome_en oder goodbye_de)
+
+type TextKeys = "welcome" | "goodbye";
+type Languages = "en" | "de";
+
+type MsgKeys = `${TextKeys}_${Languages}`;
+
+function translate(x: MsgKeys) {}
+
+// Kann auch als Key im Objekt verwendet werden:
+
+const msgs: Record<MsgKeys, string> = {
+  welcome_en: "Welcome",
+  goodbye_en: "Goodbye",
+  welcome_de: "Moin",
+  goodbye_de: "Tschüss",
+};
+
+// Beispiel 2 ------------------------------------
+
 const person = {
   firstname: "Susi",
   age: 32,
@@ -40,5 +63,6 @@ newPerson.age = 123; // nope, readonly
 const age: string = newPerson.age; // nope, number
 const newAge: number = newPerson.age; // fine!
 
+// https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
 // https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
 // https://www.typescriptlang.org/docs/handbook/2/conditional-types.html

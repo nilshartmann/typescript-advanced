@@ -51,8 +51,7 @@ function getFriend() {
 // zurückliefert, so dass wir ihn an sendLetterTo übergeben können?
 
 function sendLetterTo(x: never) {
-  x.city;
-  x.street;
+  // x sollte object mit city und street sein
 }
 
 // -----------------------------------------------------------------------------------------

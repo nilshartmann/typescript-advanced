@@ -1,5 +1,16 @@
 export default undefined;
 
+// BEISPIEL 1:
+//   Wie kann eine funktion aussehen, die einen Parameter
+//   entgegennimmt,der nur aus erlaubten Text/Sprach-Keys besteht?
+//   (z.B. welcome_en oder goodbye_de)
+
+function translate(x: any) {}
+
+// Können wir das auch benutzen, um ein Objekt zu beschreiben?
+
+// -------------- BEISPIEL 2 ---------------------------------
+
 const person = {
   firstname: "Susi",
   age: 32,
@@ -37,5 +48,6 @@ type Person = typeof person;
 // const age: string = newPerson.age; // this should be ERROR (age is not a string)
 // const newAge: number = newPerson.age; // this should be OK, age is number
 
+// https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
 // https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
 // https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
