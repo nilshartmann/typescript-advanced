@@ -5,6 +5,9 @@ export default undefined;
 //   entgegennimmt,der nur aus erlaubten Text/Sprach-Keys besteht?
 //   (z.B. welcome_en oder goodbye_de)
 
+type TextKeys = "welcome" | "goodbye";
+type Languages = "en" | "de";
+
 function translate(x: any) {}
 
 // Können wir das auch benutzen, um ein Objekt zu beschreiben?
